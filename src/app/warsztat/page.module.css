@@ -1,0 +1,107 @@
+.wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.kicker {
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rust-300);
+  margin-bottom: 0.9rem;
+}
+
+.h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  max-width: 28ch;
+}
+
+.lede {
+  margin-top: 1.1rem;
+  max-width: 62ch;
+  color: var(--text-1);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.notice {
+  margin-top: 1.6rem;
+  padding: 1rem 1.3rem;
+  background: rgba(240, 192, 77, 0.1);
+  border: 1px solid rgba(221, 169, 52, 0.35);
+  border-radius: var(--radius-md);
+  color: var(--amber-400);
+  font-size: 0.9rem;
+  max-width: 62ch;
+}
+
+.list {
+  margin-top: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.item {
+  background: var(--surface-1);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem 2rem;
+}
+
+.itemTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.itemSummary {
+  color: var(--text-0);
+  font-size: 0.98rem;
+  margin-bottom: 0.9rem;
+}
+
+.itemDetail {
+  color: var(--text-1);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.tradeoffs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+}
+
+.good {
+  color: var(--green-300);
+}
+
+.bad {
+  color: var(--rust-300);
+}
+
+.closing {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-1);
+  color: var(--text-1);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  max-width: 66ch;
+}
+
+.closing a {
+  color: var(--rust-300);
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .item {
+    padding: 1.4rem;
+  }
+}

@@ -1,0 +1,106 @@
+.card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.4rem;
+  align-items: center;
+  background: var(--surface-1);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.4rem;
+}
+
+.dateBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-right: 1.4rem;
+  border-right: 1px solid var(--border-1);
+}
+
+.dateLabel {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-2);
+}
+
+.dateValue {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.95rem;
+  color: var(--green-300);
+}
+
+.body {
+  min-width: 0;
+}
+
+.note {
+  font-size: 0.92rem;
+  color: var(--text-1);
+  line-height: 1.5;
+}
+
+.ballast {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  flex-shrink: 0;
+}
+
+.ballastLabel {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-2);
+}
+
+.ballastValue {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--amber-400);
+}
+
+.skeleton {
+  composes: card;
+}
+
+.skeletonBar {
+  height: 0.9rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--surface-1), var(--surface-2), var(--surface-1));
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeletonBar {
+    animation: none;
+  }
+}
+
+@container (max-width: 560px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+  .dateBlock {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid var(--border-1);
+    padding-bottom: 0.6rem;
+  }
+  .ballast {
+    align-items: flex-start;
+  }
+}

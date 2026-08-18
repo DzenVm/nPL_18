@@ -1,0 +1,289 @@
+.wrap {
+  container-type: inline-size;
+}
+
+/* Ballast picker */
+
+.pickPanel {
+  background: var(--surface-1);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+
+.pickTitle {
+  font-size: 1.3rem;
+  margin-bottom: 1.4rem;
+}
+
+.pickGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.pickCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+  background: var(--surface-2);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-md);
+  padding: 1.3rem;
+  color: var(--text-0);
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.pickCard:hover {
+  border-color: var(--rust-400);
+  transform: translateY(-2px);
+}
+
+.pickName {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.pickBlurb {
+  font-size: 0.87rem;
+  color: var(--text-1);
+  line-height: 1.5;
+}
+
+.pickBest {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--green-300);
+}
+
+.pickCardSmall {
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  color: var(--text-0);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.pickCardSmall:hover {
+  border-color: var(--rust-400);
+}
+
+/* Race HUD */
+
+.race {
+  background: var(--surface-1);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.hudItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.9rem;
+}
+
+.hudLabel {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-2);
+}
+
+.hudValue {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-0);
+}
+
+.heatRow {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.heatLabel {
+  font-size: 0.85rem;
+  color: var(--text-1);
+  white-space: nowrap;
+}
+
+.heatTrack {
+  flex: 1;
+  height: 0.55rem;
+  background: var(--surface-2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.heatFill {
+  height: 100%;
+  width: var(--meter-fill);
+  background: color-mix(in oklch, var(--green-400) calc(100% - var(--meter-fill)), var(--danger-500) var(--meter-fill));
+  transition: --meter-fill 0.35s ease;
+  border-radius: 999px;
+}
+
+.heatValue {
+  width: 3.5ch;
+  text-align: right;
+  color: var(--text-1);
+  font-size: 0.85rem;
+}
+
+.lapTrack {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lapSegment {
+  flex: 1;
+  height: 0.4rem;
+  background: var(--surface-2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.lapFill {
+  height: 100%;
+  background: var(--rust-500);
+  transition: width 0.2s ease;
+}
+
+/* Gauge */
+
+.gauge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.gaugeTrack {
+  position: relative;
+  height: 2.6rem;
+  background: linear-gradient(90deg, var(--surface-2) 0%, var(--surface-2) 78%, rgba(193, 68, 44, 0.35) 100%);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-1);
+  overflow: hidden;
+}
+
+.gaugeZone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: rgba(134, 171, 82, 0.35);
+  border-left: 2px solid var(--green-400);
+  border-right: 2px solid var(--green-400);
+}
+
+.gaugeNeedle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--needle-pos);
+  width: 3px;
+  background: var(--text-0);
+  box-shadow: 0 0 8px 1px rgba(245, 239, 226, 0.6);
+  transform: translateX(-50%);
+}
+
+.gaugeScale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.shiftButton {
+  align-self: flex-start;
+  background: var(--rust-500);
+  color: #201409;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.9rem 2.2rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.shiftButton:hover:not(:disabled) {
+  background: var(--rust-400);
+  transform: translateY(-1px);
+}
+
+.shiftButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.shiftButton:disabled {
+  background: var(--surface-2);
+  color: var(--text-2);
+  cursor: not-allowed;
+}
+
+.message {
+  min-height: 1.4em;
+  color: var(--text-1);
+  font-size: 0.94rem;
+}
+
+.resultPanel {
+  border-top: 1px solid var(--border-1);
+  padding-top: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.resultTime {
+  font-size: 1.8rem;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  color: var(--text-0);
+}
+
+.resultNote {
+  color: var(--green-300);
+  font-size: 0.92rem;
+}
+
+.resultActions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.4rem;
+  flex-wrap: wrap;
+}
+
+@container (max-width: 640px) {
+  .pickGrid {
+    grid-template-columns: 1fr;
+  }
+  .hud {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .race,
+  .pickPanel {
+    padding: 1.4rem;
+  }
+}
