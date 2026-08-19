@@ -15,9 +15,9 @@ export default function WarsztatPage() {
       <span className={styles.kicker}>Warsztat</span>
       <h1 className={styles.h1}>Z czego naprawdę buduje się zawodnika</h1>
       <p className={styles.lede}>
-        Żadna z klas poniżej nie jest gotowym produktem do kupienia — to pięć różnych podejść do
-        złożenia auta, z zupełnie innym zestawem wad i zalet. Wybór klasy to pierwsza decyzja,
-        zanim jeszcze dojdzie się do balastu i toru.
+        Żadna z klas poniżej nie istnieje jako gotowy egzemplarz. To pięć różnych podejść do
+        złożenia auta, z zupełnie innym zestawem wad i zalet. Wybór klasy to pierwsza decyzja —
+        jeszcze przed balastem, jeszcze przed torem.
       </p>
 
       <p className={styles.notice}>
@@ -42,7 +42,7 @@ export default function WarsztatPage() {
 
       <div className={styles.closing}>
         <p>
-          Żadna klasa nie jest obiektywnie „najlepsza” — dobór zależy od toru, balastu i tego, na
+          Obiektywnie najlepszej klasy po prostu nie ma — dobór zależy od toru, balastu i tego, na
           ile ktoś jest gotów majstrować przy naprawach między wyścigami. Więcej o samych torach
           znajdziesz na <Link href="/#tory">stronie głównej</Link>, a mechanikę zmiany biegów
           możesz sprawdzić już teraz w <Link href="/wyscig">grywalnym demie</Link>.

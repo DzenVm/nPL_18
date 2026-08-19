@@ -18,8 +18,8 @@ export default function RegulaminPage() {
         <h2>1. Postanowienia ogólne</h2>
         <p>
           Serwis {site.domain} udostępnia treści opisujące przeglądarkową grę wyścigową oraz
-          grywalne demo jednego z jej trybów. Korzystanie z serwisu jest bezpłatne i nie wymaga
-          zakładania konta.
+          grywalne demo jednego z jej trybów. Korzystanie z serwisu nie wymaga zakładania konta —
+          otwierasz stronę i od razu widzisz całą treść.
         </p>
 
         <h2>2. Kto może korzystać z serwisu</h2>
@@ -31,8 +31,8 @@ export default function RegulaminPage() {
 
         <h2>3. Zasady korzystania z demo</h2>
         <ul>
-          <li>Demo jest darmowe i nie zawiera mikropłatności, elementów losowych ani reklam wyskakujących w trakcie rozgrywki.</li>
-          <li>Zapisywane lokalnie czasy przejazdów służą wyłącznie Tobie — nie budujemy z nich żadnego rankingu.</li>
+          <li>Demo nie przerywa rozgrywki reklamami ani wyskakującymi oknami — jedziesz od startu do mety bez narzucanych z zewnątrz przerw.</li>
+          <li>Zapisywane lokalnie czasy przejazdów służą wyłącznie Tobie. Nie budujemy z nich żadnego rankingu.</li>
           <li>Zabronione jest podejmowanie prób zakłócenia działania serwisu, w tym automatycznego, masowego wysyłania żądań do serwera.</li>
         </ul>
 

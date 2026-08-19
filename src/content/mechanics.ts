@@ -9,41 +9,37 @@ export const mechanics = [
   {
     slug: "skrzynia-na-sluch",
     title: "Skrzynia biegów na wyczucie",
-    summary:
-      "Zmieniasz bieg dokładnie w momencie, gdy wskazówka wchodzi w wąskie okno na zegarze obrotów — nie wcześniej, nie później.",
+    summary: "Żadnego automatu. Bieg zmieniasz sam, patrząc na wskazówkę obrotów.",
     detail:
-      "Zero automatyki. Wskazówka obrotów podjeżdża w górę, a Ty musisz złapać moment, w którym wchodzi w zieloną kreskę — spóźniona zmiana grzeje pasek napędu, zbyt wczesna gasi napęd i każe łapać rozpęd od nowa. Po paru okrążeniach zaczynasz to czuć w nadgarstku, nie liczyć w głowie.",
+      "Wskazówka jedzie w górę, a gdzieś na skali czeka wąska zielona kreska. Trafisz w nią i auto przyspiesza czysto. Klikniesz wcześniej — silnik traci obroty, trzeba łapać rozpęd od nowa. Spóźnisz się — grzejesz pasek napędu. Po kilku okrążeniach człowiek przestaje to liczyć w głowie i zaczyna po prostu czuć, kiedy nacisnąć.",
   },
   {
     slug: "pasek-napedu",
     title: "Pasek napędu, który się grzeje",
     summary:
-      "Każda spóźniona zmiana biegu podgrzewa gumowy pasek — a przegrzany pasek oznacza przymusowy postój.",
+      "Spóźnione zmiany podgrzewają gumowy pasek. Przegrzany pasek zatrzymuje auto na kilka sekund.",
     detail:
-      "Wskaźnik paska rośnie powoli przy dobrej jeździe i skacze przy nerwowej. Kiedy dojdzie do końca skali, auto samo zjeżdża na pobocze na te kilka sekund, które psują cały okrążony rytm — dokładnie tak, jak w prawdziwym garażowym wyścigu, gdzie nikt nie wozi ze sobą zapasowego paska.",
+      "Wskaźnik rośnie powoli przy równej jeździe i skacze, kiedy się spieszysz. Po dojściu do końca skali auto samo zjeżdża na krótki postój — tak jak w prawdziwym garażu, gdzie nikt nie wozi zapasowego paska w bagażniku.",
   },
   {
     slug: "balast-startowy",
-    title: "Balast, który dobierasz przed startem",
-    summary:
-      "Przed każdym wyścigiem wybierasz, ile obciążenia dołożyć do nadwozia — decyzja zapada raz, przed sygnałem startu.",
+    title: "Balast dobierany przed startem",
+    summary: "Decydujesz raz, jeszcze przed sygnałem: ile obciążenia dołożyć do nadwozia.",
     detail:
-      "Lekki układ szybciej łapie prędkość, ale okno zmiany biegu robi się węższe i mniej wybacza spóźnienia. Ciężki balast jest cierpliwszy dla nadgarstka, za to rozpędza się jak przez syrop. Nie ma tu jednej słusznej odpowiedzi — inny balast pasuje do toru z ciasnymi zakrętami, inny do prostej z podjazdem.",
+      "Lżejszy układ szybciej łapie prędkość, ale okno na zmianę biegu robi się węższe i mniej wybacza spóźnienia. Cięższy jest cierpliwszy dla nadgarstka, za to rozpędza się jak przez błoto. Który lepszy? Zależy od toru — inny pasuje do ciasnych zakrętów, inny do prostej pod górkę.",
   },
   {
     slug: "tor-z-tego-co-pod-reka",
-    title: "Tor zbudowany z tego, co akurat było pod ręką",
-    summary:
-      "Żadnych asfaltowych obwodów — przeszkody to deski, doniczki, kawałek węża ogrodowego i cegły postawione na sztorc.",
+    title: "Tor z tego, co akurat było pod ręką",
+    summary: "Deski, doniczki, kawałek węża ogrodowego, cegły postawione na sztorc.",
     detail:
-      "Rampa z dechy opartej o dwie cegły zachowuje się inaczej niż profesjonalny najazd, a szykana z pogiętego węża ogrodowego wymaga innego wyczucia niż wytyczona farbą krawędź. To sprawia, że każda trasa ma swój, trochę nieprzewidywalny charakter — bliżej podwórka niż stadionu.",
+      "Rampa oparta o dwie cegły zachowuje się inaczej niż fabryczny najazd. Szykana z pogiętego węża wymaga innego wyczucia niż linia namalowana farbą. Każdy tor ma przez to swój, trochę nieprzewidywalny charakter — bliżej podwórka niż stadionu.",
   },
   {
     slug: "zeszyt-prob",
-    title: "Zeszyt prób zamiast tabeli wyników",
-    summary:
-      "Zapisujesz swoje czasy i ustawienia lokalnie, w przeglądarce — porównujesz się z sobą sprzed pięciu minut, nie z anonimowym rankingiem.",
+    title: "Zeszyt prób",
+    summary: "Twoje czasy i ustawienia zapisują się lokalnie, w tej przeglądarce.",
     detail:
-      "Po każdym przejeździe demo zapamiętuje Twój czas i wybrany balast wyłącznie w tej przeglądarce. Nie ma globalnej tabeli ani cudzych wyników do prześcignięcia — bo i tak nie umielibyśmy uczciwie zweryfikować, czy ktoś inny naprawdę je uzyskał.",
+      "Porównujesz się z sobą sprzed pięciu minut, nie z anonimowym kontem gdzieś w sieci. Żadnej globalnej tabeli, żadnych cudzych wyników do prześcignięcia — i tak nie mielibyśmy jak sprawdzić, czy są prawdziwe.",
   },
 ] as const satisfies readonly Mechanic[];

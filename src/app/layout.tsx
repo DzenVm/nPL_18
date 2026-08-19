@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: "%s | " + site.domain,
   },
   description:
-    "Darmowa gra przeglądarkowa o wyścigach modeli zbudowanych własnoręcznie: ręczna skrzynia biegów na wyczucie, tory z desek, kredy i węża ogrodowego. Bez instalacji, bez mikropłatności.",
+    "Przeglądarkowa gra o wyścigach modeli zbudowanych własnoręcznie: ręczna skrzynia biegów na wyczucie, tory z desek, kredy i węża ogrodowego. Działa od razu, bez instalowania czegokolwiek.",
   applicationName: site.domain,
   alternates: { canonical: "/" },
   openGraph: {
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
     siteName: site.domain,
     title: "Przeglądarkowa gra wyścigowa o podwórkowych torach",
     description:
-      "Ręczna skrzynia biegów na wyczucie, balast dobierany przed startem i tory zbudowane z tego, co akurat było pod ręką. Zero mikropłatności, zero instalacji.",
+      "Ręczna skrzynia biegów na wyczucie, balast dobierany przed startem i tory zbudowane z tego, co akurat było pod ręką. Żadnej instalacji — działa od razu w przeglądarce.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Przeglądarkowa gra wyścigowa o podwórkowych torach",
     description:
-      "Ręczna skrzynia biegów na wyczucie i tory zbudowane z desek, kredy i węża ogrodowego. Zagraj w przeglądarce, bez instalacji.",
+      "Ręczna skrzynia biegów na wyczucie i tory zbudowane z desek, kredy i węża ogrodowego. Otwierasz przeglądarkę i już grasz.",
   },
   robots: { index: true, follow: true },
   icons: {
@@ -72,7 +72,7 @@ const websiteJsonLd = {
   url: site.url,
   inLanguage: site.language,
   description:
-    "Darmowa przeglądarkowa gra wyścigowa o modelach budowanych ręcznie i torach ułożonych z domowych przedmiotów, bez mikropłatności i bez elementów losowych.",
+    "Przeglądarkowa gra wyścigowa o modelach budowanych ręcznie i torach ułożonych z domowych przedmiotów, z ręczną skrzynią biegów jako główną mechaniką rozgrywki.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

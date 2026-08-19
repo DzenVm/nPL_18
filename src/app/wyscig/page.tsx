@@ -25,7 +25,7 @@ export default function WyscigPage() {
           <div className={styles.howToNum}>01</div>
           <p className={styles.howToText}>
             Wybierz balast. Lekki szybciej przyspiesza, ale ma węższe okno na zmianę biegu.
-            Ciężki wybacza więcej, kosztem rozpędu.
+            Ciężki wybacza więcej, choć wolniej łapie prędkość.
           </p>
         </div>
         <div className={styles.howToItem}>

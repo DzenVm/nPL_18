@@ -5,33 +5,33 @@ export interface Principle {
 
 export const principles = [
   {
-    title: "Żadnych zakupów w trakcie gry",
+    title: "Nic nie jest sztucznie zablokowane",
     detail:
-      "Balastu, paska napędu ani nowej klasy nadwozia nie da się kupić za prawdziwe pieniądze — bo nie ma czego kupować. Wszystko, co dostępne, dostępne jest od razu i dla każdego tak samo.",
+      "Balast, klasa nadwozia i dostępny tor są widoczne od pierwszej wizyty — nie trzeba niczego odblokowywać ani czekać. Czego nie ma, tego po prostu jeszcze nie zbudowaliśmy.",
   },
   {
-    title: "Wynik zależy od wyczucia, nie od losowania",
+    title: "Status budowy bez owijania w bawełnę",
     detail:
-      "W demie nie ma skrzynek z nagrodami, losowych bonusów ani ukrytych mnożników. Szybszy czas bierze się z lepszego wyczucia momentu zmiany biegu, a nie z farta.",
+      "Przy każdym torze, trybie i klasie pojazdu piszemy wprost, czy to już działa, czy dopiero powstaje. Dat premiery nie podajemy — przy tempie pracy jednej osoby i tak byśmy ich nie dotrzymali.",
   },
   {
-    title: "Status budowy podany wprost",
+    title: "Każdy przycisk robi to, co obiecuje",
     detail:
-      "Przy każdym torze, trybie i klasie pojazdu piszemy uczciwie, czy to działa, czy dopiero powstaje. Nie publikujemy dat premiery, bo przy jednoosobowym tempie prac i tak byśmy ich nie dotrzymali.",
+      "Elementy oznaczone jako „w przygotowaniu” albo „w planach” nie prowadzą donikąd — po prostu jeszcze ich nie pokazujemy. Zero martwych linków i animacji udających funkcję, której nie ma.",
   },
   {
-    title: "Zgoda na cookies nie blokuje dostępu do treści",
+    title: "Odmowa w bannerze cookies nic nie zmienia",
     detail:
-      "Odmowa zgody na pliki analityczne czy reklamowe nie ogranicza dostępu do żadnej części serwisu — działa on identycznie, z pełną treścią, niezależnie od wyboru w bannerze.",
+      "Kliknij „tylko niezbędne”, a strona i tak pokaże Ci całą treść. Zgoda na pliki analityczne czy reklamowe to osobna sprawa, która na dostęp nie wpływa.",
   },
   {
-    title: "Bez silnika 3D na siłę",
+    title: "Bez silnika gry na siłę",
     detail:
-      "Cały ruch w demie renderujemy w SVG i na zwykłych elementach strony, bez zewnętrznego silnika gry. Prościej się to utrzymuje, a na słabszym telefonie po prostu szybciej się ładuje.",
+      "Ruch w demie to zwykłe elementy strony i SVG animowane w przeglądarce, bez zewnętrznego silnika w tle. Prościej to utrzymać, a na starszym telefonie szybciej się ładuje.",
   },
   {
-    title: "Dostępność sprawdzana, nie doklejana później",
+    title: "Dostępność od pierwszej wersji, nie po skardze",
     detail:
-      "Nawigacja klawiaturą, widoczny fokus i ustawienie „ogranicz animacje” w systemie działają od pierwszej wersji każdej podstrony — nie jako poprawka wprowadzona po skargach.",
+      "Klawiatura, widoczny fokus i systemowe „ogranicz animacje” działają na każdej podstronie od początku. Nikt nas o to nie prosił — po prostu tak miało być od razu.",
   },
 ] as const satisfies readonly Principle[];

@@ -12,37 +12,33 @@ export const modes = [
   {
     slug: "trening-swobodny",
     title: "Trening swobodny",
-    summary:
-      "Bez presji czasu i bez przeciwników — uczysz się okna zmiany biegu we własnym tempie, ile razy chcesz.",
+    summary: "Bez presji czasu i bez przeciwników. Uczysz się okna zmiany biegu we własnym tempie.",
     detail:
-      "To właśnie ten tryb działa już teraz jako grywalne demo. Trzy okrążenia, jeden tor, wybór balastu przed startem i zapis Twojego czasu lokalnie w przeglądarce. Dobry punkt startowy, zanim spróbujesz czegoś bardziej wymagającego.",
+      "To ten tryb działa już teraz jako grywalne demo — trzy okrążenia, jeden tor, wybór balastu przed startem. Twój czas zapisuje się lokalnie w przeglądarce. Dobry punkt startowy, zanim spróbujesz czegoś bardziej wymagającego.",
     status: "demo",
   },
   {
     slug: "wyzwanie-dnia",
     title: "Wyzwanie dnia",
-    summary:
-      "Codziennie inny zestaw startowy — balast, tor i ustawienie paska napędu dobierane raz na dobę przez serwer.",
+    summary: "Codziennie inny zestaw startowy, liczony po stronie serwera z bieżącej daty.",
     detail:
-      "Parametry wyzwania liczone są po stronie serwera z bieżącej daty, więc każdy w Polsce dostaje tego samego dnia identyczny układ startowy. Sama rozgrywka w tym trybie jest jeszcze w przygotowaniu — na stronie głównej widać już jednak, jak wygląda dzisiejszy zestaw.",
+      "Balast, tor i drobny szczegół dnia zmieniają się raz na dobę, więc każdy w Polsce widzi tego samego dnia identyczny układ. Sama rozgrywka w tym trybie jest jeszcze w przygotowaniu — na stronie głównej widać już jednak, jak wygląda dzisiejszy zestaw.",
     status: "w-przygotowaniu",
   },
   {
     slug: "sprint-sasiedzki",
     title: "Sprint sąsiedzki",
-    summary:
-      "Jedno okrążenie, krótki tor, brak marginesu na pomyłkę — wersja dla tych, którzy wolą krócej i intensywniej.",
+    summary: "Jedno okrążenie. Krótki tor. Zero marginesu na pomyłkę.",
     detail:
-      "Zamiast trzech okrążeń jest jedno, za to zakręty następują szybciej po sobie, a okno zmiany biegu domyślnie węższe. Format pomyślany pod krótką przerwę, a nie pod cały wieczór przed ekranem.",
+      "Zamiast trzech okrążeń jest jedno, a zakręty następują szybciej po sobie. Okno na zmianę biegu domyślnie węższe niż w treningu. Format pomyślany pod krótką przerwę, nie pod cały wieczór przed ekranem.",
     status: "w-planach",
   },
   {
     slug: "maraton-podworkowy",
     title: "Maraton podwórkowy",
-    summary:
-      "Dłuższy przejazd na kilku połączonych torach pod rząd, gdzie zarządzanie paskiem napędu liczy się bardziej niż pojedynczy odruch.",
+    summary: "Kilka połączonych torów pod rząd, gdzie zarządzanie paskiem napędu liczy się bardziej niż jeden dobrze złapany moment.",
     detail:
-      "Tu decyduje wytrzymałość ustawień, nie jeden dobrze złapany moment. Planujemy, żeby pasek napędu grzał się i chłodził wolniej niż w treningu, za to każda pomyłka kumulowała się na dłuższym dystansie.",
+      "Planujemy, żeby pasek napędu grzał się i chłodził wolniej niż w treningu, za to każda pomyłka kumulowała się na dłuższym dystansie. Nie decyduje tu jeden odruch, tylko wytrzymałość ustawień na cały przejazd.",
     status: "w-planach",
   },
 ] as const satisfies readonly GameMode[];

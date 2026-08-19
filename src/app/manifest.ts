@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Przeglądarkowa gra wyścigowa — " + site.domain,
     short_name: site.domain,
     description:
-      "Darmowa gra przeglądarkowa: ręczna skrzynia biegów na wyczucie i tory zbudowane z domowych przedmiotów.",
+      "Przeglądarkowa gra wyścigowa: ręczna skrzynia biegów na wyczucie i tory zbudowane z domowych przedmiotów.",
     start_url: "/",
     display: "standalone",
     background_color: "#171310",

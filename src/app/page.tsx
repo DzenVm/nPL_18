@@ -17,7 +17,7 @@ import { TodayChallenge, TodayChallengeSkeleton } from "@/components/TodayChalle
 export const metadata: Metadata = {
   title: "Strona główna",
   description:
-    "Przeglądarkowa gra wyścigowa bez instalacji i bez mikropłatności: ręczna skrzynia biegów na wyczucie, balast dobierany przed startem i tory z desek, kredy oraz węża ogrodowego.",
+    "Przeglądarkowa gra wyścigowa: ręczna skrzynia biegów na wyczucie, balast dobierany przed startem i tory z desek, kredy oraz węża ogrodowego. Zaczynasz od razu, bez instalowania niczego.",
 };
 
 const requirements = [
@@ -30,8 +30,8 @@ const requirements = [
     value: "Aktualna przeglądarka z obsługą JavaScript. System operacyjny nie ma znaczenia.",
   },
   {
-    label: "Płatności",
-    value: "Żadnych. W serwisie nie ma niczego do kupienia, więc nie ma też o co pytać.",
+    label: "Zapis wyników",
+    value: "Najlepszy czas z demo zostaje lokalnie w tej przeglądarce, dopóki nie wyczyścisz jej danych.",
   },
   {
     label: "Sugerowany wiek",
@@ -78,10 +78,10 @@ export default function HomePage() {
             automatu.
           </h1>
           <p className={styles.heroLede}>
-            Model rozpędza się tylko wtedy, gdy złapiesz właściwy moment na zmianę biegu — o
-            sekundę za wcześnie i silnik gaśnie, o sekundę za późno i grzeje się pasek napędu.
-            Reszta toru to deski, cegły i to, co akurat stało w garażu. Bez pobierania, bez konta
-            i bez grosza do zapłacenia.
+            Model rozpędza się tylko wtedy, gdy złapiesz właściwy moment na zmianę biegu. Sekundę
+            za wcześnie i silnik gaśnie. Sekundę za późno i grzeje się pasek napędu. Reszta toru
+            to deski, cegły i to, co akurat stało w garażu. Otwierasz przeglądarkę i grasz —
+            żadnego pobierania, żadnego konta.
           </p>
           <div className={styles.heroActions}>
             <Link href="/wyscig" className={styles.btnPrimary}>
@@ -101,8 +101,8 @@ export default function HomePage() {
               <div className={styles.statLabel}>klas nadwozia do wyboru</div>
             </div>
             <div>
-              <div className={`${styles.statValue} numeric`}>0 zł</div>
-              <div className={styles.statLabel}>do zapłacenia w dowolnym momencie</div>
+              <div className={`${styles.statValue} numeric`}>3</div>
+              <div className={styles.statLabel}>okrążenia w jednym przejeździe demo</div>
             </div>
           </div>
         </div>
@@ -130,27 +130,21 @@ export default function HomePage() {
         <div className={styles.proseGrid}>
           <div className={styles.prose}>
             <p>
-              Zaczęło się od pytania, które chyba zadał sobie niejeden właściciel skrzynki z
-              narzędziami: co, jeśli zamiast kupować gotowy model, złożyć własny — z tego, co akurat
-              jest pod ręką — i wypuścić go na tor narysowany kredą na podjeździe? Ta gra jest
-              odpowiedzią na to pytanie, tylko przeniesioną do przeglądarki, żeby dało się w nią
-              zagrać bez brudzenia sobie rąk smarem.
+              Pomysł wziął się z pytania, które pewnie zadał sobie niejeden właściciel skrzynki z
+              narzędziami. Co, gdyby złożyć własny model z tego, co akurat jest pod ręką, i puścić
+              go na tor narysowany kredą na podjeździe? Ta gra jest odpowiedzią, tylko przeniesioną
+              do przeglądarki — bez smaru pod paznokciami.
             </p>
             <p>
-              Sedno rozgrywki nie leży w tym, kto mocniej wciśnie gaz. Auto ma ręczną skrzynię
-              biegów — Ty decydujesz, kiedy dokładnie zmienić przełożenie, patrząc na wskazówkę
-              obrotów. Spóźniona zmiana grzeje gumowy pasek napędu, a przegrzany pasek to
-              kilkusekundowy postój, który potrafi zepsuć całe dobrze jadące okrążenie.
-            </p>
-            <p className={styles.pullquote}>
-              „Najszybszy bywa nie ten, kto najmocniej depcze gaz, tylko ten, kto najdłużej
-              pamięta, że pasek napędu też ma swoje zdanie.”
+              Kto mocniej wciśnie gaz, ma tu najmniejsze znaczenie. Auto ma ręczną skrzynię biegów.
+              Ty decydujesz, kiedy dokładnie zmienić przełożenie, patrząc na wskazówkę obrotów.
+              Spóźniona zmiana grzeje gumowy pasek napędu. Przegrzany pasek to kilkusekundowy
+              postój, który potrafi zepsuć całe dobrze jadące okrążenie.
             </p>
             <p>
-              Na razie gotowy do gry jest jeden tor i jeden tryb — reszta zestawienia niżej na tej
-              stronie jest oznaczona uczciwie jako „w przygotowaniu” albo „w planach”. Wolimy to
-              napisać wprost, niż obiecywać terminy, których jednoosobowy zespół i tak by nie
-              dotrzymał.
+              Gotowy do gry jest na razie jeden tor i jeden tryb. Reszta zestawienia niżej na tej
+              stronie ma opisany status wprost — „w przygotowaniu” albo „w planach”, bez terminów,
+              których jednoosobowy zespół i tak by nie dotrzymał.
             </p>
           </div>
           <figure className={styles.figure}>
@@ -170,8 +164,8 @@ export default function HomePage() {
         <span className={styles.kicker}>Zasady, których się trzymamy</span>
         <h2 className={styles.h2}>Sześć rzeczy, które postanowiliśmy zrobić inaczej</h2>
         <p className={styles.lede}>
-          Zamiast reklamować funkcje, wolimy pokazać zasady stojące za decyzjami — łatwiej wtedy
-          ocenić, czy ten projekt w ogóle jest dla Ciebie.
+          Decyzje stojące za projektem mówią więcej niż lista funkcji. Łatwiej wtedy ocenić, czy
+          to w ogóle coś dla Ciebie.
         </p>
         <div className={styles.grid3}>
           {principles.map((p, i) => (
@@ -188,8 +182,8 @@ export default function HomePage() {
         <span className={styles.kicker}>Jak to się gra</span>
         <h2 className={styles.h2}>Pięć mechanik, które razem tworzą jeden wyścig</h2>
         <p className={styles.lede}>
-          Żadna z nich nie działa osobno — dopiero razem dają ten specyficzny, trochę nerwowy
-          rytm garażowych wyścigów.
+          Każda z nich działa w tle nieustannie. Razem dają ten specyficzny, trochę nerwowy rytm
+          garażowych wyścigów.
         </p>
         <div className={styles.grid3}>
           {mechanics.map((m, i) => (
@@ -231,8 +225,8 @@ export default function HomePage() {
         <span className={styles.kicker}>Tory</span>
         <h2 className={styles.h2}>Sześć miejsc, w których toczą się wyścigi</h2>
         <p className={styles.lede}>
-          Każdy tor ma inny charakter, bo powstał z innych, przypadkowo dostępnych materiałów —
-          nie z jednego, powtarzalnego szablonu przeszkód.
+          Każdy tor wygląda inaczej, bo powstał z innych, przypadkowo dostępnych materiałów. Bez
+          jednego, powtarzalnego szablonu przeszkód.
         </p>
         <div className={styles.trackList}>
           {tracks.map((t) => (
@@ -267,8 +261,8 @@ export default function HomePage() {
         <span className={styles.kicker}>Warsztat</span>
         <h2 className={styles.h2}>Z czego buduje się zawodnika</h2>
         <p className={styles.lede}>
-          Żadnych fabrycznych modeli — pięć klas, które różnią się wagą, sztywnością i tym, jak
-          bardzo wybaczają błędy w utrzymaniu. Pełny opis każdej klasy jest na osobnej stronie.
+          Pięć klas nadwozia, żadna fabryczna. Różnią się wagą, sztywnością i tym, jak bardzo
+          wybaczają błędy w utrzymaniu. Pełny opis każdej jest na osobnej stronie.
         </p>
         <div className={styles.grid3}>
           {vehicleClasses.map((v) => (
@@ -293,8 +287,7 @@ export default function HomePage() {
         <span className={styles.kicker}>Galeria</span>
         <h2 className={styles.h2}>Kilka kadrów z podwórka</h2>
         <p className={styles.lede}>
-          Bez zdjęć realnych osób czy miejsc — to wygenerowane ilustracje, które mają oddać
-          klimat, a nie udawać dokumentację.
+          Ilustracje, nie zdjęcia — chodziło nam o klimat, nie o dokumentację konkretnego miejsca.
         </p>
         <div className={styles.galleryGrid}>
           {gallery.map((g) => (
@@ -351,7 +344,7 @@ export default function HomePage() {
           </h2>
           <div className={styles.finalCtaActions}>
             <Link href="/wyscig" className={styles.btnPrimary}>
-              Zagraj teraz — za darmo
+              Zagraj teraz
             </Link>
             <Link href="/kontakt" className={styles.btnSecondary}>
               Napisz do nas

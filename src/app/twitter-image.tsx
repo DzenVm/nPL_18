@@ -46,7 +46,7 @@ export default async function TwitterImage() {
           Wyścigi rysowane kredą po własnym podjeździe, z ręczną skrzynią biegów
         </div>
         <div style={{ display: "flex", fontSize: 28, color: "#cdc0aa", marginTop: 36 }}>
-          nometuwe.best — bez instalacji, bez mikropłatności
+          nometuwe.best — bez instalacji, prosto w przeglądarce
         </div>
       </div>
     ),

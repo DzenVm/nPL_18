@@ -18,7 +18,7 @@ export const tracks = [
     place: "Betonowa płyta między bramą a ulicą, trasa narysowana kredą",
     feature: "Plama oleju po starym aucie, którą trzeba omijać jako naturalną szykanę",
     detail:
-      "Pierwszy tor, jaki w ogóle powstał — bo był najbliżej. Kredowe linie co tydzień trzeba odświeżać po deszczu, a plama oleju na środku prostej z czasem stała się stałym elementem trasy, a nie usterką do zamalowania. Dostępny już jako grywalne demo.",
+      "Pierwszy tor, jaki w ogóle powstał, bo był najbliżej. Kredowe linie trzeba co tydzień odświeżać po deszczu. Plama oleju na środku prostej z czasem stała się stałym elementem trasy, nie usterką do zamalowania. Dostępny już jako grywalne demo.",
     status: "demo",
   },
   {
@@ -28,7 +28,7 @@ export const tracks = [
     place: "Korytarz piwniczny między schowkami lokatorów",
     feature: "Niska rura pod sufitem, przez którą przejeżdżają tylko niższe nadwozia",
     detail:
-      "Powstał, bo w styczniu na podjeździe robi się ślisko, a wyścigi nie znoszą przerwy zimowej. Wąski korytarz wymusza jazdę praktycznie po jednym torze jazdy — wyprzedzanie jest tu w zasadzie teoretyczne. Warstwa dźwiękowa: echo silniczka odbite od betonu.",
+      "Powstał, bo w styczniu na podjeździe robi się ślisko. Wąski korytarz wymusza jazdę praktycznie po jednym torze — wyprzedzanie jest tu w zasadzie teoretyczne. Do tego echo silniczka odbite od betonu, którego nie usłyszysz nigdzie indziej w tym zestawieniu.",
     status: "w-przygotowaniu",
   },
   {
@@ -38,7 +38,7 @@ export const tracks = [
     place: "Wąska ścieżka między rzędami warzyw a płotem sąsiada",
     feature: "Szykana z pogiętego węża do podlewania, ułożonego w literę S",
     detail:
-      "Tor sezonowy — dostępny od maja do września, póki grządki zajmują swoje miejsce. Wąż ogrodowy zmienia ułożenie niemal codziennie, więc szykana nigdy nie wygląda identycznie dwa dni z rzędu.",
+      "Sezonowy — dostępny mniej więcej od maja do września, póki grządki zajmują swoje miejsce. Wąż zmienia ułożenie niemal codziennie, więc szykana rzadko wygląda tak samo dwa dni z rzędu.",
     status: "w-planach",
   },
   {
@@ -48,7 +48,7 @@ export const tracks = [
     place: "Wypożyczona na niedzielne popołudnie hala po nieczynnym warsztacie samochodowym",
     feature: "Nogi warsztatowego stołu jako brama zwężająca tor do jednego auta szerokości",
     detail:
-      "Największa dostępna przestrzeń w całym zestawieniu, ale też jedyna, z której trzeba korzystać punktowo — hala nie jest nasza na stałe. Zapach starego oleju silnikowego wisi w powietrzu, nawet gdy same auta w środku są od dawna miniaturowe.",
+      "Największa przestrzeń w całym zestawieniu, ale jedyna, z której korzysta się punktowo, bo hala nie jest nasza na stałe. W powietrzu wciąż wisi zapach starego oleju silnikowego, nawet gdy same auta w środku są od dawna miniaturowe.",
     status: "w-planach",
   },
   {
@@ -58,7 +58,7 @@ export const tracks = [
     place: "Niskie poddasze, do którego prowadzi drabina",
     feature: "Skos dachu ograniczający wysokość nadwozia — nie każda konstrukcja się tam zmieści",
     detail:
-      "Tor, który sam w sobie jest testem na to, czy Twój pojazd w ogóle nadaje się do rywalizacji w ciasnych warunkach. Zamiast szybkości liczy się tu przede wszystkim niska sylwetka i cierpliwość na zakrętach pod skosem.",
+      "Ten tor sam w sobie jest testem: sprawdza, czy pojazd w ogóle nadaje się do jazdy w ciasnych warunkach. Liczy się niska sylwetka i cierpliwość pod skosem, nie prędkość.",
     status: "w-planach",
   },
   {
@@ -66,9 +66,9 @@ export const tracks = [
     index: 6,
     title: "Boisko osiedlowe wieczorem",
     place: "Betonowe boisko do gry w klasy i piłkę ręczną, po zmroku, pod jedną latarnią",
-    feature: "Linie boiska do gry w klasy przejęte jako oznaczenie toru zamiast rysowania od zera",
+    feature: "Linie boiska przejęte jako oznaczenie toru zamiast rysowania od zera",
     detail:
-      "Jedyny tor, na którym światła jest mniej niż cienia — latarnia rzuca ostry krąg blasku na środek płyty, a reszta trasy tonie w półmroku. Trzeba jeździć trochę na pamięć, nie tylko na wzrok.",
+      "Jedyny tor, na którym cienia jest więcej niż światła. Latarnia rzuca ostry krąg blasku na środek płyty, reszta trasy tonie w półmroku — trzeba jeździć trochę z pamięci, nie tylko na wzrok.",
     status: "w-planach",
   },
 ] as const satisfies readonly Track[];

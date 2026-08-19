@@ -67,12 +67,39 @@ function dots(rand, { count, xMin, xMax, yMin, yMax, rMin, rMax, color, opMin, o
   return out;
 }
 
-function svgDoc(w, h, inner) {
+function jitter(rand, points, amount) {
+  return points
+    .map(([x, y]) => [x + between(rand, -amount, amount), y + between(rand, -amount, amount)])
+    .map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`)
+    .join(" ");
+}
+
+function svgDoc(w, h, inner, seed = 1) {
+  const grainSeed = (seed % 97) / 97;
   return `<!doctype html><html><head><meta charset="utf-8"><style>
     html,body{margin:0;padding:0;background:${palette.bg0};}
     svg{display:block;}
   </style></head><body>
-  <svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${inner}</svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
+    <defs>
+      <filter id="grain">
+        <feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="2" seed="${Math.round(grainSeed * 100) + 1}" stitchTiles="stitch" result="noise"/>
+        <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.9 0"/>
+      </filter>
+      <radialGradient id="vignette" cx="50%" cy="46%" r="72%">
+        <stop offset="50%" stop-color="#000" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#000" stop-opacity="0.42"/>
+      </radialGradient>
+      <linearGradient id="grade" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#3a2a52"/>
+        <stop offset="100%" stop-color="#2a1a08"/>
+      </linearGradient>
+    </defs>
+    ${inner}
+    <rect width="${w}" height="${h}" fill="url(#grade)" opacity="0.12" style="mix-blend-mode:soft-light"/>
+    <rect width="${w}" height="${h}" filter="url(#grain)" opacity="0.16" style="mix-blend-mode:overlay"/>
+    <rect width="${w}" height="${h}" fill="url(#vignette)"/>
+  </svg>
   </body></html>`;
 }
 
@@ -162,7 +189,7 @@ function sceneDriveway(w, h, seed) {
     </g>
     <rect width="${w}" height="${h}" fill="black" opacity="0.06"/>
   `
-  );
+  , seed);
 }
 
 /* ---------- Scene 2: workshop table ---------- */
@@ -262,7 +289,7 @@ function sceneWorkshop(w, h, seed) {
       <circle cx="8" cy="20" r="3.5" fill="${palette.rust400}"/>
     </g>
   `
-  );
+  , seed);
 }
 
 /* ---------- Scene 3: plank ramp, overcast day ---------- */
@@ -311,17 +338,20 @@ function sceneRamp(w, h, seed) {
       <circle cx="${w * 0.97}" cy="${horizon + 2}" r="11"/>
     </g>
     <ellipse cx="${w * 0.52}" cy="${h * 0.86}" rx="${w * 0.26}" ry="18" fill="#000" opacity="0.28"/>
-    <rect x="${w * 0.3}" y="${h * 0.78}" width="${w * 0.09}" height="${h * 0.1}" fill="${palette.brick}" stroke="${palette.brickDark}" stroke-width="2"/>
-    <rect x="${w * 0.63}" y="${h * 0.8}" width="${w * 0.09}" height="${h * 0.08}" fill="${palette.brick}" stroke="${palette.brickDark}" stroke-width="2"/>
+    <polygon points="${jitter(rand, [[w * 0.3, h * 0.78], [w * 0.39, h * 0.78], [w * 0.39, h * 0.88], [w * 0.3, h * 0.88]], 3)}"
+      fill="${palette.brick}" stroke="${palette.brickDark}" stroke-width="2"/>
+    <polygon points="${jitter(rand, [[w * 0.63, h * 0.8], [w * 0.72, h * 0.8], [w * 0.72, h * 0.88], [w * 0.63, h * 0.88]], 3)}"
+      fill="${palette.brick}" stroke="${palette.brickDark}" stroke-width="2"/>
     <g transform="rotate(-9 ${w * 0.5} ${h * 0.72})">
-      <rect x="${w * 0.27}" y="${h * 0.68}" width="${w * 0.46}" height="${h * 0.075}" rx="4" fill="url(#plank)" stroke="${palette.woodDark}" stroke-width="2"/>
-      <line x1="${w * 0.3}" y1="${h * 0.705}" x2="${w * 0.7}" y2="${h * 0.705}" stroke="${palette.woodDark}" stroke-width="1.5" opacity="0.6"/>
-      <line x1="${w * 0.3}" y1="${h * 0.725}" x2="${w * 0.7}" y2="${h * 0.725}" stroke="${palette.woodDark}" stroke-width="1.5" opacity="0.4"/>
+      <polygon points="${jitter(rand, [[w * 0.27, h * 0.68], [w * 0.73, h * 0.68], [w * 0.73, h * 0.755], [w * 0.27, h * 0.755]], 4)}"
+        fill="url(#plank)" stroke="${palette.woodDark}" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="${w * 0.3}" y1="${h * 0.705}" x2="${w * 0.7}" y2="${h * 0.703}" stroke="${palette.woodDark}" stroke-width="1.5" opacity="0.6"/>
+      <line x1="${w * 0.3}" y1="${h * 0.727}" x2="${w * 0.7}" y2="${h * 0.724}" stroke="${palette.woodDark}" stroke-width="1.5" opacity="0.4"/>
     </g>
     <path d="M ${w * 0.02} ${h * 0.96} C ${w * 0.12} ${h * 0.88}, ${w * 0.2} ${h * 0.84}, ${w * 0.29} ${h * 0.775}"
       fill="none" stroke="${palette.chalk}" stroke-width="5" stroke-dasharray="14 10" opacity="0.75" stroke-linecap="round"/>
   `
-  );
+  , seed);
 }
 
 /* ---------- Scene 4: chalk track, midday ---------- */
@@ -379,7 +409,7 @@ function sceneChalkTrack(w, h, seed) {
     <line x1="${w * 0.31}" y1="${h * 0.825}" x2="${w * 0.32}" y2="${h * 0.945}" stroke="${palette.chalk}" stroke-width="4" opacity="0.6" stroke-linecap="round"/>
     ${dust}
   `
-  );
+  , seed);
 }
 
 /* ---------- Scene 5: garden hose chicane, golden afternoon ---------- */
@@ -418,7 +448,7 @@ function sceneHose(w, h, seed) {
     </defs>
     <rect width="${w}" height="${h * 0.4}" fill="url(#sky5)"/>
     <rect y="${h * 0.36}" width="${w}" height="${h * 0.64}" fill="${palette.green600}" opacity="0.55"/>
-    <polygon points="${w * 0.25},${h} ${w * 0.75},${h} ${w * 0.6},${h * 0.4} ${w * 0.4},${h * 0.4}" fill="url(#path5)"/>
+    <polygon points="${jitter(rand, [[w * 0.25, h], [w * 0.75, h], [w * 0.6, h * 0.4], [w * 0.4, h * 0.4]], 6)}" fill="url(#path5)"/>
     ${grassBlades}
     <ellipse cx="${w * 0.2}" cy="${h * 0.2}" rx="${w * 0.3}" ry="${h * 0.22}" fill="url(#dapple)"/>
     <ellipse cx="${w * 0.7}" cy="${h * 0.15}" rx="${w * 0.22}" ry="${h * 0.18}" fill="url(#dapple)"/>
@@ -438,7 +468,7 @@ function sceneHose(w, h, seed) {
       <ellipse cx="0" cy="-8" rx="13" ry="7" fill="${palette.amber500}"/>
     </g>
   `
-  );
+  , seed);
 }
 
 /* ---------- Scene 6: finish line at night ---------- */
@@ -497,7 +527,7 @@ function sceneFinish(w, h, seed) {
       <circle cx="18" cy="20" r="7" fill="${palette.bg0}" stroke="${palette.text2}" stroke-width="2"/>
     </g>
   `
-  );
+  , seed);
 }
 
 const jobs = [

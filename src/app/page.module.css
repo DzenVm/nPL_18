@@ -225,16 +225,6 @@
   line-height: 1.7;
 }
 
-.pullquote {
-  font-family: var(--font-display), sans-serif;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--text-0);
-  border-left: 3px solid var(--rust-500);
-  padding-left: 1.3rem;
-  line-height: 1.4;
-}
-
 .figure {
   margin: 0;
   position: sticky;
