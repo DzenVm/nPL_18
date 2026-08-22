@@ -62,33 +62,6 @@
   color: var(--amber-400);
 }
 
-.skeleton {
-  composes: card;
-}
-
-.skeletonBar {
-  height: 0.9rem;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--surface-1), var(--surface-2), var(--surface-1));
-  background-size: 200% 100%;
-  animation: shimmer 1.4s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .skeletonBar {
-    animation: none;
-  }
-}
-
 @container (max-width: 560px) {
   .card {
     grid-template-columns: 1fr;

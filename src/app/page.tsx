@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -12,7 +11,7 @@ import { faq } from "@/content/faq";
 import { gallery, heroImage } from "@/content/gallery";
 import { statusLabel } from "@/content/types";
 import { site } from "@/content/site";
-import { TodayChallenge, TodayChallengeSkeleton } from "@/components/TodayChallenge";
+import { TodayChallenge } from "@/components/TodayChallenge";
 
 export const metadata: Metadata = {
   title: "Strona główna",
@@ -118,9 +117,7 @@ export default function HomePage() {
               działa naprawdę.
             </p>
           </div>
-          <Suspense fallback={<TodayChallengeSkeleton />}>
-            <TodayChallenge />
-          </Suspense>
+          <TodayChallenge />
         </div>
       </section>
 

@@ -1,9 +1,10 @@
-import { connection } from "next/server";
+import { cacheLife } from "next/cache";
 import { getDailyChallenge } from "@/lib/daily-seed";
 import styles from "./TodayChallenge.module.css";
 
 export async function TodayChallenge() {
-  await connection();
+  "use cache";
+  cacheLife("hours");
   const challenge = getDailyChallenge(new Date());
 
   return (
@@ -18,24 +19,6 @@ export async function TodayChallenge() {
       <div className={styles.ballast}>
         <span className={styles.ballastLabel}>Sugerowany balast</span>
         <span className={styles.ballastValue}>{challenge.ballast}</span>
-      </div>
-    </div>
-  );
-}
-
-export function TodayChallengeSkeleton() {
-  return (
-    <div className={styles.skeleton} aria-hidden="true">
-      <div className={styles.dateBlock}>
-        <span className={styles.dateLabel}>Dziś</span>
-        <div className={styles.skeletonBar} style={{ width: "9ch" }} />
-      </div>
-      <div className={styles.body}>
-        <div className={styles.skeletonBar} style={{ width: "70%" }} />
-      </div>
-      <div className={styles.ballast}>
-        <span className={styles.ballastLabel}>Sugerowany balast</span>
-        <div className={styles.skeletonBar} style={{ width: "6ch" }} />
       </div>
     </div>
   );

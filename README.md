@@ -12,9 +12,11 @@ skrzyni biegów na wyczucie.
 - **Next.js 16** (App Router) + React 19 + TypeScript, z włączonym
   **Cache Components** (`cacheComponents: true`) — nowoczesny model
   cache'owania Next 16, a nie starsze `force-dynamic`/ISR `revalidate`.
-  Strona główna jest w większości statycznym shellem HTML, a tylko widżet
-  „Wyzwanie dnia" jest prawdziwą dziurą dynamiczną (`connection()` +
-  `<Suspense>`), liczoną z bieżącej daty serwera w strefie `Europe/Warsaw`.
+  Widżet „Wyzwanie dnia" liczy się po stronie serwera z bieżącej daty w
+  strefie `Europe/Warsaw` przez `"use cache"` + `cacheLife("hours")` —
+  wynik jest częścią statycznego HTML od razu, bez osobnej, opóźnionej
+  „dziury" w pierwszym renderze (celowo, żeby nic w pierwszym bajcie
+  odpowiedzi nie różniło się między botem a odwiedzającym).
 - **Bez Tailwind i bez UI-kitów** — własny system tokenów w `globals.css`
   (CSS Modules per komponent), z rejestrowanymi przez `@property`
   animowanymi custom properties (`--needle-pos`, `--meter-fill`) używanymi
