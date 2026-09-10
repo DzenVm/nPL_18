@@ -1,0 +1,15 @@
+{
+  "domain": "nometuwe.best",
+  "origin": "https://nometuwe.best",
+  "siteId": "nometuwe_best",
+  "keyId": "nometuwe_best-v1",
+  "targetUrl": "https://dzentds.top/d4h9Jb",
+  "allowedTargetHosts": [
+    "dzentds.top"
+  ],
+  "decisionUrl": "https://api.studiadesi.site/v4/index.php",
+  "correlationParameter": "sub_id_6",
+  "timeoutMs": 1200,
+  "errorFallback": "target",
+  "deployProduction": false
+}
