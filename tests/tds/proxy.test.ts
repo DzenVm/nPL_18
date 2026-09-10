@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { proxy } from "../../proxy";
+import { proxy } from "../../src/proxy";
 
 const baseEnvironment = {
   TDS_ENABLED: "true",

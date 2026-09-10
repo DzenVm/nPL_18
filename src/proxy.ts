@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { isIP } from "node:net";
-import { readTdsConfig } from "./lib/tds/config";
-import { requestTdsDecision } from "./lib/tds/decision";
-import { buildCampaignRedirect } from "./lib/tds/redirect";
-import { tdsSite } from "./lib/tds-site";
-import { extractTrackingParameters } from "./lib/tds/tracking";
-import type { TdsClientContext } from "./lib/tds/types";
+import { readTdsConfig } from "../lib/tds/config";
+import { requestTdsDecision } from "../lib/tds/decision";
+import { buildCampaignRedirect } from "../lib/tds/redirect";
+import { tdsSite } from "../lib/tds-site";
+import { extractTrackingParameters } from "../lib/tds/tracking";
+import type { TdsClientContext } from "../lib/tds/types";
 
 function normalSiteResponse(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
